@@ -20,8 +20,9 @@ function clean () {
   
 }
 
-function reload () {
+function reload (cb) {
   browserSync.reload()
+  cb()
 }
 
 function html () {
