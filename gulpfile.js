@@ -11,8 +11,7 @@ const del = require('del')
 var config = {
   cssin:    __dirname + '/sass/**/*.sass',
   jsin:     __dirname + '/babel/**/*.js',
-  jsentry:  __dirname + '/babel/index.js',
-  htmlin:   __dirname + '/haml/**/*.haml',
+  htmlin:   __dirname + '/html/**/*.html',
   assetsin: __dirname + '/assets/**/*',
   cssout:   __dirname + '/docs/css/',
   jsout:    __dirname + '/docs/js/',
@@ -67,10 +66,10 @@ function serve (cb) {
     server: config.htmlout
   })
 
-  gulp.watch(config.jsin, gulp.series(babl, reload))
-  gulp.watch(config.cssin, gulp.series(css, reload))
-  gulp.watch(config.htmlin, gulp.series(html, reload))
-  gulp.watch(config.assetsin, gulp.series(assets, reload))
+  gulp.watch(config.jsin, () => gulp.series(babl, reload))
+  gulp.watch(config.cssin, () => gulp.series(css, reload))
+  gulp.watch(config.htmlin, () => gulp.series(html, reload))
+  gulp.watch(config.assetsin, () => gulp.series(assets, reload))
 
   cb()
 }
