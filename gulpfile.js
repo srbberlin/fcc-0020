@@ -11,7 +11,8 @@ const del = require('del')
 var config = {
   cssin:    __dirname + '/sass/**/*.sass',
   jsin:     __dirname + '/babel/**/*.js',
-  htmlin:   __dirname + '/html/**/*.html',
+  jsentry:  __dirname + '/babel/index.js',
+  htmlin:   __dirname + '/haml/**/*.haml',
   assetsin: __dirname + '/assets/**/*',
   cssout:   __dirname + '/docs/css/',
   jsout:    __dirname + '/docs/js/',
