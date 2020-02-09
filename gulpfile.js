@@ -67,10 +67,10 @@ function serve (cb) {
     server: config.htmlout
   })
 
-  gulp.watch(config.jsin, () => gulp.series(babl, reload))
-  gulp.watch(config.cssin, () => gulp.series(css, reload))
-  gulp.watch(config.htmlin, () => gulp.series(html, reload))
-  gulp.watch(config.assetsin, () => gulp.series(assets, reload))
+  gulp.watch(config.jsin, gulp.series(babl, reload))
+  gulp.watch(config.cssin,  gulp.series(css, reload))
+  gulp.watch(config.htmlin, gulp.series(html, reload))
+  gulp.watch(config.assetsin, gulp.series(assets, reload))
 
   cb()
 }
